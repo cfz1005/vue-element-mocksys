@@ -1,0 +1,184 @@
+
+body {
+    margin:0;
+    padding:0;
+    height: 100%;
+    background:#e1e4e8;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size:14px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  }
+  
+  label {
+    font-weight: 700;
+  }
+  
+  html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  #app {
+    height: 100%;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  .no-padding {
+    padding: 0px !important;
+  }
+  
+  .padding-content {
+    padding: 4px 0;
+  }
+  
+  a:focus,
+  a:active {
+    outline: none;
+  }
+  
+  a,
+  a:focus,
+  a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  div:focus {
+    outline: none;
+  }
+  
+  .fr {
+    float: right;
+  }
+  
+  .fl {
+    float: left;
+  }
+  
+  .pr-5 {
+    padding-right: 5px;
+  }
+  
+  .pl-5 {
+    padding-left: 5px;
+  }
+  
+  .block {
+    display: block;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  
+  .inlineBlock {
+    display: block;
+  }
+  
+  .clearfix {
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  }
+
+  /* home */
+  .home{
+    height:100%;
+    display: flex;
+    flex-flow: column;
+  }
+  .home-container{
+    padding:20px;
+    flex:1;
+  }
+  .home-footer{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-top:1px solid #ccc;
+    font-size:12px;
+    color:#777;
+  }
+  .home-footer a{
+    margin:0 12px;
+  }
+  .home-footer a:hover{
+    color:#42b983;
+    text-decoration: underline;
+  }
+
+  /* mylist */
+  .el-card__header{
+    padding:15px 10px;
+  }
+  .el-card__body{
+    padding:15px 10px 5px;
+    font-size:12px;
+    color:#777;
+  }
+
+
+  
+.account-box{
+  width:350px;
+  // margin:200px auto 0;
+  position: absolute;
+  top:20%;
+  left:50%;
+  margin:0 0 0 -175px;
+  padding:15px;
+  opacity:.9;
+  border-radius:5px;
+  background:#fff;
+  box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  
+  .tit{
+      height:65px;
+      line-height: 55px;
+      font-size:18px;
+      text-align: center;
+  }
+  .bottom{
+      margin-bottom:0;
+      .fl a{
+      font-size:12px;
+      color:#42b983;
+      }
+  }
+  .captcha{
+    .el-input-group__append{
+      padding:0 5px;
+      width:130px;
+      .el-icon-refresh-right{
+        font-size:20px;color:#000;
+        margin:8px 0 0 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.account-btn{
+  position: absolute;
+  top:20px;
+  right:20px;
+  opacity:.5;
+  &:hover{
+    opacity:1;
+  }
+}
