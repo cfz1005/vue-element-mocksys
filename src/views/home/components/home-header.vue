@@ -1,6 +1,6 @@
 <template>
     <div class="navbar">
-        <div class="left-menu left-logo"><a href="###"><img src="../../../assets/logo.png" alt=""></a></div>
+        <div class="left-menu left-logo"><a href="/"><img src="../../../assets/logo.png" alt=""></a></div>
         <el-menu
             class="el-menu-demo left-menu"
             :router="true"

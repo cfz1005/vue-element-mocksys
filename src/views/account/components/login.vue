@@ -1,6 +1,6 @@
 <template>
     <div class="account-box">
-        <div class="tit">登陆</div>
+        <div class="tit"><img src="../../../assets/logo.png" alt=""></div>
         <el-form :model="formData" :rules="rules" ref="form">
             <el-form-item prop="username">
                 <el-input type="text" placeholder="邮箱" v-model="formData.username" maxlength="30">
