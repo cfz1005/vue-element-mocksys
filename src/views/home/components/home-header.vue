@@ -12,7 +12,7 @@
             active-text-color="#2c3e50">
             <el-menu-item index="/my">我创建的</el-menu-item>
             <el-menu-item index="/team">我加入的</el-menu-item>
-            <el-menu-item index="/chart">数据</el-menu-item>
+            <!-- <el-menu-item index="/chart">数据</el-menu-item> -->
         </el-menu>
         
         <el-dropdown class="right-menu" @command="handleCommand">
