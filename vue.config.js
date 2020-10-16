@@ -1,8 +1,8 @@
 module.exports = {
-    // publishPath:"./",
+    // publicPath:"./",
     // outputDir:"dist",
     // assetsDir:"static",
-    productionSourceMap:false,
+    productionSourceMap:false, // 不生成map文件
     devServer:{
         proxy:{
             "/api":{

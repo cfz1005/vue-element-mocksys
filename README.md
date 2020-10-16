@@ -1,19 +1,21 @@
-# vue-element-mocksys
+# mocksys-client
 
-## Project setup
+## 初始化 安装项目依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发模式
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 生产模式
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 生产模式（测试环境）
+```
+npm run build-test
+```

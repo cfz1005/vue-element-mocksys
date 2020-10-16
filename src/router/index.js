@@ -46,7 +46,14 @@ const routes = [
   {
     path: '/account',
     name: 'account',
-    component: () => import('@/views/account')
+    component: () => import('@/views/account'),
+    meta: { title: "一个简易的接口管理服务平台" }
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('@/views/about'),
+    meta: { title: "关于我们" }
   },
   {
     path: '/404',

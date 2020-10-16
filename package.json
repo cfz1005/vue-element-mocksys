@@ -1,10 +1,11 @@
 {
-  "name": "vue-element-mockdata",
+  "name": "mocksys",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build-test": "vue-cli-service build --mode production.test"
   },
   "dependencies": {
     "axios": "^0.19.2",

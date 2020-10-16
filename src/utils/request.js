@@ -9,7 +9,7 @@ let pending = []; // 声明一个数组用于存储每个请求的url和对应�
 let cancelToken = axios.CancelToken; // axios提供了cancelToken来取消请求
 let cancelPending = (config) => {
     // 找到对应url，执行取消操作
-    pending.forEach((item,index)=>{
+    pending.forEach((item, index) => {
         if (item.url === config.url) {
             // console.log("拦截或response之后清除了", item.url);
             pending[index].cancelFun();
@@ -89,11 +89,12 @@ service.interceptors.response.use(
                 store.dispatch("removeToken");
                 router.replace("/account");
             }
-            if (res.code == 404) {
+            else if (res.code == 404) {
                 // location.href = "/#/404";
                 router.replace("/404");
+            } else {
+                return Promise.reject(res.message);
             }
-            return Promise.reject(res.message);
         } else {
             return res
         }

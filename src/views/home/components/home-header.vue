@@ -10,9 +10,9 @@
             background-color="#42b983"
             text-color="#fff"
             active-text-color="#2c3e50">
-            <el-menu-item index="/my">我创建的</el-menu-item>
-            <el-menu-item index="/team">我加入的</el-menu-item>
-            <!-- <el-menu-item index="/chart">数据</el-menu-item> -->
+            <el-menu-item index="/my">我的项目</el-menu-item>
+            <el-menu-item index="/team">团队项目</el-menu-item>
+            <el-menu-item index="/about">关于我们</el-menu-item>
         </el-menu>
         
         <el-dropdown class="right-menu" @command="handleCommand">
@@ -55,7 +55,8 @@ export default {
                 this.$confirm("确定退出系统吗？","提示",{closeOnClickModal:false})
                 .then(()=>{
                     this.$store.dispatch("logout")
-                    this.$router.replace("/account");
+                    // this.$router.replace("/account");
+                    location.href = "/#/account";
                 });
             }
         }

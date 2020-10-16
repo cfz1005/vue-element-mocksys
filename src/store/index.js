@@ -85,7 +85,7 @@ export default new Vuex.Store({
         });
     },
     removeToken({ commit }) {
-      new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         commit("SET_TOKEN", "");
         commit("SET_USERINFO", {});
         removeToken();
