@@ -152,15 +152,28 @@ body {
     color:#777;
   }
 
+  /* project */
+  .interface-addr{
+    div{
+      color:#fff;
+      background: #42b983;
+      border:0 none;
+    }
+    input{
+      background:#d2e2db;
+      border:0 none;
+    }
+  }
+
 
   
 .account-box{
-  width:350px;
+  width:450px;
   // margin:200px auto 0;
   position: absolute;
   top:20%;
   left:50%;
-  margin:0 0 0 -175px;
+  margin:0 0 0 -225px;
   padding:15px;
   opacity:.9;
   border-radius:5px;
@@ -189,6 +202,36 @@ body {
         margin:8px 0 0 5px;
         cursor: pointer;
       }
+    }
+  }
+  .sm{
+    line-height: 2em;
+    margin-top:35px;
+    padding-top:6px;
+    box-shadow: 0 -1px 0 0 #eee,0 -2px 0 0 #dcdfe6;
+    p{
+      text-indent: 2em;
+    }
+    div{
+      text-align: center;
+    }
+    a{
+      display: inline-block;
+      height: 26px;
+      line-height: 26px;
+      color:#42b983;
+      font-size:16px;
+      margin:0 35px;
+      i{
+        margin-right:2px;
+        color:#222;
+        font-size:22px;
+      }
+    }
+    a.github{
+      padding-left:28px;
+      background:url(../assets/github_icon.png) no-repeat left;
+      background-size:22px;
     }
   }
 }

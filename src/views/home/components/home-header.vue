@@ -12,7 +12,8 @@
             active-text-color="#2c3e50">
             <el-menu-item index="/my">我的项目</el-menu-item>
             <el-menu-item index="/team">团队项目</el-menu-item>
-            <el-menu-item index="/about">关于我们</el-menu-item>
+            <!-- <el-menu-item index="/about">关于MockSys</el-menu-item> -->
+            <el-menu-item><a href="https://www.mocksys.com/docs" target="_blank">使用文档</a></el-menu-item>
         </el-menu>
         
         <el-dropdown class="right-menu" @command="handleCommand">
@@ -23,6 +24,7 @@
             <el-dropdown-menu slot="dropdown">
                 <!-- <el-dropdown-item command="info">个人中心</el-dropdown-item>
                 <el-dropdown-item command="logout" divided>退出登录</el-dropdown-item> -->
+                <el-dropdown-item command="update_pwd">修改密码</el-dropdown-item>
                 <el-dropdown-item command="logout">退出登录</el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
@@ -30,15 +32,25 @@
             {{userinfo.nickname}}，欢迎回来
         </div>
 
+
+        <el-dialog title="修改密码" :visible.sync="dialogVisible" width="30%">
+            <updatepwd></updatepwd>
+        </el-dialog>
+
     </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import updatepwd from '../../account/components/updatepwd'
 export default {
     data(){
         return {
+            dialogVisible:false
         }
+    },
+    components:{
+        updatepwd
     },
     computed: {
         ...mapState(["userinfo"])
@@ -51,7 +63,10 @@ export default {
 
         },
         handleCommand(command){
-            if(command === "logout"){
+            if(command === "update_pwd"){
+                this.dialogVisible = true;
+            }
+            else if(command === "logout"){
                 this.$confirm("确定退出系统吗？","提示",{closeOnClickModal:false})
                 .then(()=>{
                     this.$store.dispatch("logout")

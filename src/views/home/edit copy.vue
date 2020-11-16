@@ -4,8 +4,8 @@
         <div class="project-info" v-if="!notFound">
             <el-row>
                 <el-col :span="20" class="el-right">
-                    <div class="tit">接口数据 <span>(请输入标准的JSON格式数据，同时我们支持<a href="http://mockjs.com/examples.html" target="_blank">Mock.js</a>数据模板)，<a href="/docs/codedemo.html" target="_blank">示例模板传送门</a></span> </div>
-                    <ace-editor :propContent="json_data" :propLang="'javascript'" :propHeight="500" ref="aceEditor"></ace-editor>
+                    <div class="tit">接口数据 <span>(JSON格式，<a href="http://mockjs.com/examples.html" target="_blank">支持mockjs数据模板</a>)</span> </div>
+                    <json-editor :value="json_data" ref="jsonEditor"></json-editor>
                 </el-col>
 
                 <el-col :span="4" class="el-left">
@@ -48,7 +48,7 @@
 
 
 <script>
-import aceEditor from '@/components/ace-editor'
+import jsonEditor from '@/components/json-editor'
 import noDataTip from './components/nodata-tip'
 import { add,update,getModelById } from '@/api/interface'
 export default {
@@ -62,7 +62,7 @@ export default {
         };
         return {
             notFound: false,
-            json_data:'',
+            json_data:{},
             form_data:{
                 projectid: this.$route.params.pid,
                 url: "",
@@ -82,7 +82,7 @@ export default {
         }
     },
     components:{
-        aceEditor,
+        jsonEditor,
         noDataTip
     },
     created(){
@@ -105,12 +105,12 @@ export default {
                     }
                 ]
             };
-            this.json_data = JSON.stringify(this.json_data);
         }
     },
     methods:{
         formatJson(){
-            this.$refs.aceEditor.format();
+            // console.log(this.$refs.jsonEditor.getValue());
+            this.$refs.jsonEditor.format();
         },        
         getModel(){
             let res = getModelById(this.$route.params.iid)
@@ -120,7 +120,7 @@ export default {
                     this.form_data.method = data.method;
                     this.form_data.url = data.url;
                     this.form_data.description = data.description;
-                    this.json_data = data.content;
+                    this.json_data = JSON.parse(data.content.replace(/\\/g,""));
                 }else{
                     this.notFound = true;
                     // this.$message.error(message);
@@ -132,33 +132,13 @@ export default {
             });
         },
         submit(){
-            // 对编辑器内容进行处理,让其支持函数值
-            let text = "";
-            try {
-                text = eval("("+this.$refs.aceEditor.getValue()+")")
-                text = JSON.stringify(text,function(key, val){
-                    if(typeof val === 'function'){
-                        return val + '';
-                    } else if(typeof val === 'string' && val.indexOf('function')>-1){
-                        return val.replace(/function/ig, '');
-                    } else{
-                        return val;
-                    }
-                });
-            } catch (error) {
-                // console.log(error);
-                // return;
-                text = "error";
-            }
-
-            // 提交
             this.$refs.form.validate(valid=>{
                 if(valid){
-                    let content = text; // this.$refs.aceEditor.getValue();
+                    let content = this.$refs.jsonEditor.getValue();
                     if(content == "error"){
                         this.$notify.error({
                             title:"错误",
-                            message:"接口数据格式有误(JSON格式)，请修改~",
+                            message:"接口数据格式有误，请修改~",
                             duration:2500
                         });
                         return false;

@@ -6,15 +6,15 @@
                 <div class="project-name">{{projectInfo.project_name}}</div>
                 <div class="project-about">{{projectInfo.project_desc}}</div>
                 <div>
-                    <el-input :value="baseUrl + pid +'/:method/:url'">
+                    <el-input :value="baseUrl + pid +'/:method/:url'" class="interface-addr">
                         <!-- <template #prepend>Base URL</template> -->
-                        <template v-slot:prepend>请求地址格式1：</template>
+                        <template v-slot:prepend>接口格式1：</template>
                     </el-input>
                 </div>
                 <div>
-                    <el-input :value="baseUrl + ':interfaceId'">
+                    <el-input :value="baseUrl + ':interfaceId'" class="interface-addr">
                         <!-- <template #prepend>Base URL</template> -->
-                        <template v-slot:prepend>请求地址格式2：</template>
+                        <template v-slot:prepend>接口格式2：</template>
                     </el-input>
                 </div>
             </el-col>
@@ -162,6 +162,9 @@ export default {
         padding:10px 0;
         line-height: 1.7em;
         color:#999;
+    }
+    .el-input-group{
+        margin:3px 0;
     }
 }
 .project-btns{

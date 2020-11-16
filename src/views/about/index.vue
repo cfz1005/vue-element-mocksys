@@ -4,7 +4,7 @@
     <div class="home-container">
       <el-row class="row1">
           <el-col :span="24">
-            <h3>关于我们</h3>
+            <h3>关于MockSys</h3>
             <p>目前<code>MockSys</code>项目由个人开发和维护，纯属个人兴趣和内部团队需要。</p>
             <p>本项目可以给你(你的团队)提供接口数据模拟服务，希望在开发的道路上对你有一点点的帮助。</p>
             <p>本项目是通过Vue.js、Mock.js、Element UI、Node.js 聚合而成，在此鸣谢。</p>

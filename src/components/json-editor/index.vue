@@ -8,12 +8,14 @@
 import CodeMirror from "codemirror";
 import "codemirror/addon/lint/lint.css";
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/rubyblue.css";
+// import "codemirror/theme/rubyblue.css";
 require("script-loader!jsonlint");
 import "codemirror/mode/javascript/javascript";
 import "codemirror/addon/lint/lint";
 import "codemirror/addon/lint/json-lint";
 import jsonformat from "stringify-object";
+
+// import "codemirror/addon/hint/show-hint.css";
 
 export default {
   name: "JsonEditor",
@@ -36,9 +38,11 @@ export default {
     this.jsonEditor = CodeMirror.fromTextArea(this.$refs.textarea, {
       lineNumbers: true,
       mode: "application/json",
+      // mode:"text/html",
       gutters: ["CodeMirror-lint-markers"],
       //   theme: 'rubyblue',
-      lint: true
+      lint: true,
+      // extraKeys: {'Ctrl': 'autocomplete'},//自定义快捷键
     });
 
     this.jsonEditor.setValue(JSON.stringify(this.value, null, 2));

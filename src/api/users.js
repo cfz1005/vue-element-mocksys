@@ -21,6 +21,10 @@ export let getuserinfo = async () => {
     return await http.get("/users/getuserinfo");
 }
 
+export let updatepwd = async (data) => {
+    return await http.post("/users/updatepwd", qs.stringify(data));
+}
+
 export let getbingbg = async () => {
     return await http.get("/bing/getbg");
 }
