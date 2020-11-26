@@ -12,8 +12,8 @@
             active-text-color="#2c3e50">
             <el-menu-item index="/my">我的项目</el-menu-item>
             <el-menu-item index="/team">团队项目</el-menu-item>
-            <!-- <el-menu-item index="/about">关于MockSys</el-menu-item> -->
             <el-menu-item><a href="https://www.mocksys.com/docs" target="_blank">使用文档</a></el-menu-item>
+            <el-menu-item><a href="https://github.com/cfz1005/vue-element-mocksys" target="_blank">Github</a></el-menu-item>
         </el-menu>
         
         <el-dropdown class="right-menu" @command="handleCommand">
