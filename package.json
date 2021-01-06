@@ -8,7 +8,7 @@
     "build-test": "vue-cli-service build --mode production.test"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "codemirror": "^5.54.0",
     "core-js": "^3.6.4",
     "dart-sass": "^1.25.0",
