@@ -6,10 +6,14 @@
 
         
         <el-button-group class="account-btn">
-        <el-button size="mini" icon="el-icon-sort" @click="switchBg">切换背景</el-button>
-        <el-button size="mini" icon="el-icon-lock" @click="lockBg">锁定背景</el-button>
-        <el-button size="mini" icon="el-icon-close" @click="unlockBg" :disabled="disabled">取消锁定</el-button>
+            <el-button size="mini" icon="el-icon-sort" @click="switchBg">切换背景</el-button>
+            <el-button size="mini" icon="el-icon-lock" @click="lockBg">锁定背景</el-button>
+            <el-button size="mini" icon="el-icon-close" @click="unlockBg" :disabled="disabled">取消锁定</el-button>
         </el-button-group>
+
+        <div class="icp" style="position:fixed;bottom:0;left:0;right:0;width:100%;padding:10px 0;text-align:center;">
+            Copyright &copy; mocksys.com　　<a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备09058817号-4</a>
+        </div>
     </div>
 </template>
 

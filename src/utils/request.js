@@ -20,7 +20,6 @@ let cancelPending = (config) => {
 
 
 
-
 // create an axios instance
 const service = axios.create({
     baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -36,15 +35,15 @@ service.interceptors.request.use(
         // 判断当前请求是否在pending中，存在就取消请求
         cancelPending(config);
         // 将本次的请求添加一个cancelToken标识，用于取消重复请求
-        config.cancelToken = new cancelToken(cancel => {
+        config.cancelToken = new cancelToken(cancelFun => {
             pending.push({
                 url: config.url,
-                cancelFun: cancel
+                cancelFun: cancelFun
             });
         });
 
 
-        const token = store.state.token; //getToken();
+        const token = store.state.token; // getToken();
         token && (config.headers['token'] = token);
         return config
     },

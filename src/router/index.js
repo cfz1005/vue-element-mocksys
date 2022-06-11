@@ -14,7 +14,7 @@ const routes = [
       {
         path: 'my',
         name: 'my',
-        component: () => import('@/views/home/mylist'),
+        component: () => import( /* webpackChunkName: "mylist" */ '@/views/home/mylist'),
         meta: { title: "我创建的项目" }
       },
       {
