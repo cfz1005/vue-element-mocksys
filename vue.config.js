@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: cfz
+ * @Date: 2022-06-14 14:16:29
+ * @LastEditors: cfz
+ * @LastEditTime: 2022-06-14 14:28:47
+ */
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 module.exports = {
