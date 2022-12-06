@@ -17,7 +17,7 @@
     "js-cookie": "^2.2.1",
     "jsonlint": "^1.6.3",
     "nprogress": "^0.2.0",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "script-loader": "^0.7.2",
     "stringify-object": "^3.3.0",
     "vue": "^2.6.11",
